@@ -26,23 +26,23 @@ public class EldarApplication {
 
         OperacionesService.agregarCalculadoraTasa("VISA", fecha -> {
             Double tasa = (double) (fecha.getYear() % 100) / fecha.getMonthValue();
-            if (tasa > 5) return 5D;
-            if (tasa < 0.3) return 0.3;
+            if(tasa > 5) return 5D;
+            if(tasa < 0.3) return 0.3;
             return tasa;
         });
 
         OperacionesService.agregarCalculadoraTasa("AMEX", fecha -> {
-            Double tasa = fecha.getDayOfMonth() * 0.5;
-            if (tasa > 5) return 5D;
-            if (tasa < 0.3) return 0.3;
+            Double tasa =  fecha.getDayOfMonth() * 0.5;
+            if(tasa > 5) return 5D;
+            if(tasa < 0.3) return 0.3;
             return tasa;
 
         });
 
         OperacionesService.agregarCalculadoraTasa("NARA", fecha -> {
-            Double tasa = fecha.getMonthValue() * 0.1;
-            if (tasa > 5) return 5D;
-            if (tasa < 0.3) return 0.3;
+            Double tasa =  fecha.getMonthValue() * 0.1;
+            if(tasa > 5) return 5D;
+            if(tasa < 0.3) return 0.3;
             return tasa;
         });
 
